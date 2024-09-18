@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history';
 
 import Progress from './components/Progress';
 import Header from './components/Header';
+import SidebarApp from './components/SidebarApp';
 
 const DashboardAppLazy = lazy(() => import('./components/DashboardApp'));
 const MarketingAppLazy = lazy(() => import('./components/MarketingApp'));
@@ -30,6 +31,7 @@ export default () => {
       <Router history={history}>
         <div>
           <Header isSignedIn={isSignedIn} onSignOut={() => setIsSignedIn(false)} />
+          <SidebarApp />
           <Suspense fallback={<Progress />}>
             <Switch>
               <Route path="/auth">
