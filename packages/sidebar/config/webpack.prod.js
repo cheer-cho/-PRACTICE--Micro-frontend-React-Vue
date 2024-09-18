@@ -16,6 +16,7 @@ const prodConfig = {
       exposes: {
         './SidebarApp': './src/bootstrap',
       },
+      shared: packageJson.dependencies,
     }),
   ],
 };
